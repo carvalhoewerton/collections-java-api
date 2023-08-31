@@ -47,6 +47,19 @@ public class ListaTarefa {
 
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+                List<Tarefa> lista = new ArrayList<>();
+
+        // Adicionando elementos na lista 
+
+        lista.add(new Tarefa("Ir para faculdade"));
+        lista.add(new Tarefa("Ir para terapia"));
+        lista.add(new Tarefa("Estudar Java"));
+        lista.add(new Tarefa("Assistir algum filme"));
+
+
     }
 }
+
+
+
+
