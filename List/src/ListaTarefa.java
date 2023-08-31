@@ -17,7 +17,15 @@ public class ListaTarefa {
         return lista.size();
     }
 
-    public
+    public void obterDescricoesTarefas() {
+        if (lista.isEmpty()) {
+            System.out.println("A lista de tarefas está vazia.");
+        } else {
+            for (Tarefa tarefa : lista) {
+                System.out.println("Descrição da tarefa: " + tarefa.getDescricao());
+            }
+        }
+    }
 
 
 
