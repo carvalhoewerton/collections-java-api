@@ -26,7 +26,23 @@ public class ListaTarefa {
             }
         }
     }
-
+    public void removerTarefa(String descricao) {
+        Tarefa tarefaARemover = null;
+        
+        for (Tarefa tarefa : lista) {
+            if (tarefa.getDescricao().equals(descricao)) {
+                tarefaARemover = tarefa;
+                break;
+            }
+        }
+        
+        if (tarefaARemover != null) {
+            lista.remove(tarefaARemover);
+            System.out.println("Tarefa excluída");
+        } else {
+            System.out.println("Tarefa não encontrada");
+        }
+    }
 
 
 
