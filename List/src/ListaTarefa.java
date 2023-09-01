@@ -10,22 +10,16 @@ public class ListaTarefa {
         lista = new ArrayList<>();
     }
     
+    
+    
+
     public void adicionarTarefa(String descricao){
         lista.add(new Tarefa(descricao));
     }
     public int obterNumeroTotalTarefas(){
         return lista.size();
     }
-
-    public void obterDescricoesTarefas() {
-        if (lista.isEmpty()) {
-            System.out.println("A lista de tarefas está vazia.");
-        } else {
-            for (Tarefa tarefa : lista) {
-                System.out.println("Descrição da tarefa: " + tarefa.getDescricao());
-            }
-        }
-    }
+   
     public void removerTarefa(String descricao) {
         Tarefa tarefaARemover = null;
         
@@ -42,8 +36,18 @@ public class ListaTarefa {
         } else {
             System.out.println("Tarefa não encontrada");
         }
-    }
 
+
+    public void obterDescricoesTarefas() {
+        if (lista.isEmpty()) {
+            System.out.println("A lista de tarefas está vazia.");
+        } else {
+            for (Tarefa tarefa : lista) {
+                System.out.println("Descrição da tarefa: " + tarefa.getDescricao());
+            }
+        }
+    }
+    
 
 
     public static void main(String[] args) throws Exception {
@@ -52,7 +56,7 @@ public class ListaTarefa {
         // Adicionando elementos na lista 
 
         lista.add(new Tarefa("Ir para faculdade"));
-        lista.add(new Tarefa("Ir para terapia"));
+        lista.add(new Tarefa("Estudar para faculdade"));
         lista.add(new Tarefa("Estudar Java"));
         lista.add(new Tarefa("Assistir algum filme"));
 
