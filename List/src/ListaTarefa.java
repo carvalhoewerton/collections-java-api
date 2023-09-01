@@ -10,12 +10,10 @@ public class ListaTarefa {
         lista = new ArrayList<>();
     }
     
-    
-    
-
-    public void adicionarTarefa(String descricao){
+    public void adicionarTarefa(String descricao) {
         lista.add(new Tarefa(descricao));
-    } 
+      }
+     
     public static void removerTarefa(String descricao) {
         Tarefa tarefaARemover = null;
         
@@ -52,14 +50,15 @@ public class ListaTarefa {
 
 
     public static void main(String[] args) throws Exception {
-                ListaTarefa listaTarefas = new ListaTarefa();
+        ListaTarefa lista = new ListaTarefa();
 
         // Adicionando elementos na lista 
 
-        lista.add(new Tarefa("Ir para faculdade"));
-        lista.add(new Tarefa("Estudar para faculdade"));
-        lista.add(new Tarefa("Estudar Java"));
-        lista.add(new Tarefa("Assistir algum filme"));
+        lista.adicionarTarefa("Estudar Java");
+        lista.adicionarTarefa("Ir pra faculdade");
+        lista.adicionarTarefa("Jogar alguma coisa");
+        lista.adicionarTarefa("Assistir alguma coisa");
+        lista.adicionarTarefa("Ócio");
         
         // Deletando uma tarefa da list
         removerTarefa("Estudar Java");
@@ -73,6 +72,8 @@ public class ListaTarefa {
 
 
     }
+
+ 
 }
 
 

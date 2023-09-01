@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Tarefa {
     String descricao;
     Tarefa(String descricao){
@@ -9,4 +11,5 @@ public class Tarefa {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    
 }
