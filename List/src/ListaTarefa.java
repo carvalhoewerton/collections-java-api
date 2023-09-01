@@ -65,7 +65,8 @@ public class ListaTarefa {
         removerTarefa("Estudar Java");
 
         // Vendo o número de tarefas;
-        obterNumeroTotalTarefas();
+        int numTarefas = obterNumeroTotalTarefas();
+        System.out.print("O número de tarefas é " + numTarefas + "\n");
         
         //Mostrar todas as tarefas
         obterDescricoesTarefas();
