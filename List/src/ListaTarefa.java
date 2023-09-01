@@ -4,7 +4,7 @@ import java.util.List;
 
 
 public class ListaTarefa {
-    private List<Tarefa> lista;
+    private static List<Tarefa> lista;
     
     public ListaTarefa() {
         lista = new ArrayList<>();
@@ -15,12 +15,8 @@ public class ListaTarefa {
 
     public void adicionarTarefa(String descricao){
         lista.add(new Tarefa(descricao));
-    }
-    public int obterNumeroTotalTarefas(){
-        return lista.size();
-    }
-   
-    public void removerTarefa(String descricao) {
+    } 
+    public static void removerTarefa(String descricao) {
         Tarefa tarefaARemover = null;
         
         for (Tarefa tarefa : lista) {
@@ -35,10 +31,15 @@ public class ListaTarefa {
             System.out.println("Tarefa excluída");
         } else {
             System.out.println("Tarefa não encontrada");
-        }
+        }}
 
+    public static int obterNumeroTotalTarefas(){
+        return lista.size();
+    }
+   
+   
 
-    public void obterDescricoesTarefas() {
+    public static void obterDescricoesTarefas() {
         if (lista.isEmpty()) {
             System.out.println("A lista de tarefas está vazia.");
         } else {
@@ -51,7 +52,7 @@ public class ListaTarefa {
 
 
     public static void main(String[] args) throws Exception {
-                List<Tarefa> lista = new ArrayList<>();
+                ListaTarefa listaTarefas = new ListaTarefa();
 
         // Adicionando elementos na lista 
 
@@ -59,6 +60,15 @@ public class ListaTarefa {
         lista.add(new Tarefa("Estudar para faculdade"));
         lista.add(new Tarefa("Estudar Java"));
         lista.add(new Tarefa("Assistir algum filme"));
+        
+        // Deletando uma tarefa da list
+        removerTarefa("Estudar Java");
+
+        // Vendo o número de tarefas;
+        obterNumeroTotalTarefas();
+        
+        //Mostrar todas as tarefas
+        obterDescricoesTarefas();
 
 
     }
