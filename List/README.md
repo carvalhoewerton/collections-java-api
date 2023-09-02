@@ -1,0 +1,1 @@
+Utilizando lists e collections. Resolvendo alguns algóritmos de operações básicas.
