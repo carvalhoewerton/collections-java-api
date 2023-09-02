@@ -70,7 +70,7 @@ public static void main(String args[]){
     lista.adicionarItem("Sandália", 49.90, 1);
     
     //Removendo um item;
-    removerItem("Xampu");
+    removerItem("Rocambole");
 
     //Vendo o valor total
     System.out.print("O valor total é: " + calcularValorTotal() + "\n");
