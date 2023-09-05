@@ -8,10 +8,10 @@ public class ListaTarefas {
         this.lista = new HashSet<>();
     }
     
-    public void staticadicionarTarefa(String descricao, boolean concluido){
+    public static void adicionarTarefa(String descricao, boolean concluido){
         lista.add(new Tarefa(descricao, concluido));
     }
-    public void removerTarefa(String descricao){
+    public static void removerTarefa(String descricao){
         Tarefa remover = null;
         if(!lista.isEmpty()){
              for(Tarefa t:lista){
@@ -24,9 +24,9 @@ public class ListaTarefas {
         }
        if(remover != null){
         lista.remove(remover);
-        System.out.print("Tarefa apagada!");
+        System.out.print("Tarefa apagada!\n");
        }else{
-        System.out.print("Tarefa não encontrada!");
+        System.out.print("Tarefa não encontrada!\n");
        }
 
     }
@@ -53,7 +53,7 @@ public class ListaTarefas {
         }
         return concluidos;
     }
-    public static Set<Tarefa> pendentes(){
+    public static Set<Tarefa> obeterTarefasPendentes(){
         Set<Tarefa> pendentes = new HashSet<>();
         for(Tarefa t:lista){
             if(!t.isConcluido()){
@@ -61,7 +61,9 @@ public class ListaTarefas {
             }
         }
         return pendentes;
+
     }
+    
     public static void marcarTarefaConcluida(String descricao){
         for(Tarefa t:lista){
             if(t.getDescricao().equals(descricao)){
@@ -85,4 +87,37 @@ public class ListaTarefas {
     public static void limparListaTarefas(){
         lista.clear();
     }
+    public static void main(String args[]){
+        ListaTarefas lista = new ListaTarefas();
+        adicionarTarefa("Estudar java", false);
+        adicionarTarefa("Ir pra faculdade", true);
+        adicionarTarefa("Assistir um filme", true);
+        adicionarTarefa("Estudar C++", false);
+        removerTarefa("Estudar C++");
+        exibirTarefas();
+        marcarTarefaConcluida("Assistir um filme");
+        marcarTarefaPendente("Ir para faculdade");
+        Set<Tarefa> con = obterTarefasConcluidas();
+        Set<Tarefa> pen = obeterTarefasPendentes();
+        for(Tarefa t:con){
+            System.out.print(t.getDescricao() + "\n");
+        }
+        for(Tarefa t:pen){
+            System.out.print(t.getDescricao() + "\n");
+        }
+        
+        
+
+
+
+
+    }
+
+
+
+
+
+
+
+
 }
